@@ -10,7 +10,7 @@ class Products extends React.Component {
             <div>
                 {Products.map(Products => (
                     <ProductItems 
-                    todo={Products} 
+                    Products={Products} 
                     key={Products.id} 
                     />
                 ))}

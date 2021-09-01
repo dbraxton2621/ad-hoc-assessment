@@ -4,11 +4,11 @@ import ProductItems from './ProductItems'
 class Products extends React.Component {
     render() {
 
-        const {Products} = this.props
+        const {products} = this.props
 
         return(
             <div>
-                {Products.map(Products => (
+                {products.map(Products => (
                     <ProductItems 
                     Products={Products} 
                     key={Products.id} 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Products from './Components.js/Products';
+import Loading from './Components.js/Loading'
 import './App.css';
 
 class App extends React.Component{
@@ -23,7 +24,7 @@ class App extends React.Component{
   }
 
   render() {
-    const {products} = this.state
+    const {products, productitem} = this.state
 
     const changeStateofSingleProduct = (product) => {
       this.setState({loading: true})
@@ -32,10 +33,10 @@ class App extends React.Component{
       this.setState({loading: false})
     }
 
-    if(loading) {
-      return <Loading changeStateofSingleProduct={changeStateofSingleProduct}/>
+    if(Products) {
+      return <Products products={products} productitem={productitem}/>
     } else {
-      return <Products products={products} />
+      return <Loading changeStateofSingleProduct={changeStateofSingleProduct}/>
     }
   }
 

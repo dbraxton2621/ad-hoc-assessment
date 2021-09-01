@@ -9,6 +9,9 @@ class ProductItem extends React.Component {
         return(
             <div className="listItem">
                 <p>{Products.id}</p>
+                <p>{Products.name}</p>
+                <p>{Products.price}</p>
+                <p>{Products.productNumber}</p>
             </div>
         )
     }

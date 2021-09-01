@@ -24,19 +24,13 @@ class App extends React.Component{
   }
 
   render() {
-    const {products, productitem} = this.state
+    const {products, loading} = this.state
 
-    const changeStateofSingleProduct = (product) => {
-      this.setState({loading: true})
-      this.setState({product:product})
-      console.log(product)
-      this.setState({loading: false})
-    }
 
-    if(Products) {
-      return <Products products={products} productitem={productitem}/>
+    if(loading) {
+      return <Loading />
     } else {
-      return <Loading changeStateofSingleProduct={changeStateofSingleProduct}/>
+      return <Products products={products} productitem={productitem}/>
     }
   }
 
